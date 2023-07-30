@@ -1,0 +1,65 @@
+$themes: (
+    light: (
+        textColorPrimary: #000,
+        textColorSoft: #aeaeae,
+        textColorSecondary: white,
+        bgPrimary: rgb(255, 254, 254),
+        bgSecondary: #00164e,
+        bgSoft: #5581ef,
+        hover: orange,
+        icons: #00164e,
+        
+        borderDark: #00164e,
+        borderLight: lightgray,
+        
+
+
+    ),
+    dark: (
+        textColor: whitesmoke,
+        bg: #222,
+        logo: white,
+        bgSoft: #333,
+        textColorSoft:  lightGray,
+        border: #444,
+
+
+    ),
+    
+ );
+
+ @mixin themify($themes) {
+    @each $theme, $map in $themes {
+        .theme-#{$theme} & {
+            $theme-map: () !global;
+            @each $key, $submap in $map {
+                $value: map-get(map-get($themes, $theme), "#{$key}");
+                $theme-map: map-merge(
+                    $theme-map,
+                    (
+                        $key: $value,
+                    )
+                ) !global;
+            }
+            @content;
+            $theme-map: null !global;
+        }
+    }
+ }
+
+ @function themed($key) {
+    @return map-get($theme-map, $key);
+ }
+
+ @mixin mobile {
+    @media (max-width: 480px) {
+        @content;
+    }
+    
+ }
+ @mixin tablet {
+    @media (max-width: 960px) {
+        @content;
+    }
+    
+ }

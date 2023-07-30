@@ -1,0 +1,148 @@
+
+.footer {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+   
+    padding: 50px 100px;
+
+    @media all and (max-width: 1253px){
+        padding: 50px 50px !important;
+    }
+    @media all and (max-width: 900px){
+        padding: 50px 50px !important;
+    }
+
+    @media all and (max-width: 400px){
+        padding: 50px 20px !important;
+    }
+
+    .link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .content {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @media all and (max-width: 768px) {
+            flex-wrap: wrap;
+        }
+
+
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+
+            &.links {
+
+                @media all and (max-width: 768px) {
+                    
+                }
+            }
+
+            .title {
+                font-weight: 600;
+                font-size: 22px;
+                font-family: "Teko" !important;
+                margin-bottom: 10px;
+            }
+
+            .socialLinks {
+                display: flex;
+                align-items: center;
+            }
+
+            .copyRight {
+                font-size: 14px;
+                color: gray;
+            }
+
+            .item {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                margin-bottom: 20px;
+
+                .icon {
+                    font-size: 25px;
+                    color: orange;
+                }
+
+                .itemItems {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    span {
+                        font-size: 14px;
+                        color: gray;
+                    }
+                }
+            }
+
+            .link {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                color: rgb(103, 102, 102);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .desc {
+                color: orange;
+                font-size: 14px;
+                margin-bottom: 15px;
+                max-width: 400px;
+            }
+
+            form {
+                display: flex;
+                align-items: center;
+                
+                input {
+                    border: none;
+                    outline: none;
+                    height: 40px;
+                    flex: 4;
+                    padding: 0 10px;
+                    border-radius: 5px 0 0 5px;
+                }
+
+                button {
+                    height: 40px;
+                    border: none;
+                    background-color: orange;
+                    flex: 1;
+                    border-radius: 0 5px 5px 0;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+   .author {
+    font-size: 14px;
+    color: gray;
+
+    .link {
+        color: rgb(245, 189, 85);
+    }
+   }
+        
+
+
+}

@@ -1,0 +1,106 @@
+@import "../../style.scss";
+
+.sidebar {
+    @include themify($themes){
+        position: fixed;
+        top:0;
+        right: 0;
+        width: 340px;
+        height: 100vh;
+        background-color: white;
+        color: gray;
+        padding: 30px;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+
+        -webkit-box-shadow: -4px 0px 14px -3px rgba(0,0,0,0.55);
+        -moz-box-shadow: -4px 0px 14px -3px rgba(0,0,0,0.55);
+        box-shadow: -4px 0px 14px -3px rgba(0,0,0,0.55);
+
+        &.active {
+            transform: translateX(0%);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            .closeIcon {
+                position: absolute;
+                top: 0;
+                right: 0;
+                cursor: pointer;
+                color: #1c2331;
+            }
+
+            .logo {
+                width: 100%;
+                display: flex;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            .text {
+                font-size: 14px;
+                color: gray;
+                margin-bottom: 50px;
+            }
+
+            .heading {
+                font-size: 20px;
+                color: #1c2331;
+                margin-bottom: 20px;
+            }
+
+            .items {
+                padding-left: 50px;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 50px;
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                    .icon {
+                        margin-right: 10px;
+                        font-size: 20px;
+                        color: orange;
+                    }
+
+                    span {
+                        font-size: 14px;
+                        width: 150px;
+                    }
+
+                }
+            }
+
+            .icons {
+                display: flex;
+                align-items: center;
+                padding-left: 50px;
+                gap: 10px;
+
+                span {
+                    width: fit-content;
+                    height: fit-content;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .icon {
+                        padding: 10px;
+                        background-color: orange;
+                        border-radius: 2px;
+                        color: white;
+                        cursor: pointer;
+                        border-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+}

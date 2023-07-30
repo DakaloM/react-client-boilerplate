@@ -1,0 +1,26 @@
+.rating {
+    display: flex;
+    flex-direction: column;
+
+    .ratingTitle {
+        font-size: 14px;
+        color: gray;
+    }
+
+    .stars {
+        display: flex;
+        align-items: center;
+
+        .icon {
+            color: orange;
+            font-size: 25px;
+        }
+        margin-bottom: 0;
+    }
+
+    .feedback {
+        font-size: 12px;
+        color: rgb(248, 163, 6);
+        font-weight: 700;
+    }
+}
