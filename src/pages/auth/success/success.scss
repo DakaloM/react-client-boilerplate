@@ -1,0 +1,26 @@
+.success {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+        color: green;
+    }
+
+    .desc {
+        color: rgb(169, 169, 169);
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .link {
+        text-decoration: none;
+        padding: 3px 10px;
+        background-color: #243752e7;
+        color: white;
+        border-radius: 5px;
+    }
+}

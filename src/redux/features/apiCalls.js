@@ -10,7 +10,7 @@ export const login = async (dispatch, user, navigate) => {
     try {
         const res = await publicRequest.post('auth/login',user);
         dispatch(loginSuccess(res.data));
-        navigate("/?user=true");
+        navigate("/");
     } catch (error) {
         dispatch(loginFailure(error))
         dispatch(setErrorMessage(

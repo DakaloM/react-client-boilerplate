@@ -1,0 +1,14 @@
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 90vh;
+    flex-direction: column;
+
+    span {
+        font-size: 18px;
+        font-weight: 700;
+        color: #243752e7;
+    }
+}

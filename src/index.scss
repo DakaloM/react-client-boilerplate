@@ -5,3 +5,16 @@
 body {
     overflow-x: hidden;
 }
+
+.successText {
+    font-size: 16px;
+    font-weight: 600;
+    color: green;
+    padding: 5px 0;
+}
+.errorText {
+    font-size: 16px;
+    font-weight: 600;
+    color: red;
+    padding: 5px 0;
+}

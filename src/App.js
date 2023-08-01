@@ -13,10 +13,18 @@ import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import ResetPassword from "./pages/resetPassword/ResetPassword";
+import { useStateContext } from "./context/ContextProvider";
+import ForgotPassword from "./pages/forgotPassword/ForgotPassword";
+import Success from "./pages/success/Success";
 
 function App() {
 
-  const user = true;
+  const { user } = useStateContext();
+
+  
 
   const Layout = () => {
     return (
@@ -24,57 +32,54 @@ function App() {
 
         <Navbar />
         <Outlet />
-        <Footer />
+        {/* <Footer /> */}
 
       </div>
     )
   }
 
   const ProtectedRoutes = ({children}) => {
-      if(user !== true) {
-        <Navigate to="/"/>
+      if(user === null) {
+        return  <Navigate to="/login" />
       }
       return children
   }
 
-  const router = createBrowserRouter([
-    {
-      path: "/", element: <Layout />, children: [
-        {path: "/", element:<Home />},
-        {path: "/home", element:<Home />},
-        {path: "/about", element:<About />},
-        {path: "/contact", element:<Contact />},
-      ],
-
-
-    },
-
-    
-  ])
+  
 
   // const router = createBrowserRouter([
-  //   {path: '/login', element: <Login />},
-  //   {path: '/register', element: <Register />},
   //   {
-  //     path: '/', element :
-  //       <ProtectedRoutes>
-  //         <Layout />
-  //       </ProtectedRoutes>,
+  //     path: "/", element: <Layout />, children: [
+  //       {path: "/", element:<Home />},
+  //       {path: "/home", element:<Home />},
+  //       {path: "/about", element:<About />},
+  //       {path: "/contact", element:<Contact />},
+  //     ],
 
-  //       children : [
-  //         {path: '/', element: <Home />},
-  //         {path: '/categories', element: <Categories />},
-  //         {path: '/members', element: <Members />},
-  //         {path: '/editMember/:id', element: <EditMember />},
-  //         {path: '/slides', element: <Slides />},
-  //         // {path: '/editSlide/:id', element: <EditSlide />},
-  //         {path: '/users', element: <Users />},
-  //         {path: '/posts', element: <Posts />},
-  //         {path: '/editPost/:id', element: <EditPost />},
-  //         {path: '/testimonies', element: <Testimonies />},
-  //       ]
+
   //   },
+
+    
   // ])
+
+  const router = createBrowserRouter([
+    {path: '/login', element: <Login />},
+    {path: '/register', element: <Register />},
+    {path: '/resetPassword/:token', element: <ResetPassword />},
+    {path: '/forgotPassword', element: <ForgotPassword />},
+    {path: '/success', element: <Success />},
+    {
+      path: '/', element :
+        <ProtectedRoutes>
+          <Layout />
+        </ProtectedRoutes>,
+
+        children : [
+          {path: '/', element: <Home />},
+          
+        ]
+    },
+  ])
 
 
 
